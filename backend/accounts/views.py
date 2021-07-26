@@ -9,7 +9,8 @@ from .models import Customer
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import SessionAuthentication
-
+from django.conf import settings
+from django.core.mail import send_mail
 
 class CurrentUserAPIView(APIView):
     # authentication_classes = (TokenAuthentication,SessionAuthentication)
@@ -74,3 +75,4 @@ class UserDetailsAPIView(APIView):
             return Response(serialized_data, status=status.HTTP_200_OK)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+

@@ -3,3 +3,4 @@ node_modules
 env/
 frontend/package-lock.json
 package.json
+*.pyc
